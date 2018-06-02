@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+/*GRID*/
+.container{
+  /*width: 1640px;*/
+  width: 1200px;
+  margin: 0 auto;
+}
+.row{
+  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.row-vcentring{
+  align-items: center;
+}
+.row-gcentring{
+  justify-content: center;
+}
+.col{
+  padding-left: 15px;
+  padding-right: 15px;
+}

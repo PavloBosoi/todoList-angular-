@@ -1,0 +1,29 @@
+<div class="container">
+    <form class="example-form">
+      <div class="row row-vcentring row-gcentring">
+
+        <div class="col">
+          <mat-form-field class="example-full-width">
+            <input matInput #message maxlength="256" placeholder="Task">
+            <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field>
+            <mat-select placeholder="Favorite food">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{ food.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <button mat-button color="primary"><i class="material-icons">add_circle_outline</i></button>
+        </div>
+
+      </div>
+    </form>
+</div>
