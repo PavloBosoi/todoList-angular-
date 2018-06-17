@@ -4,16 +4,25 @@
   border: none;
   outline: none;
 }
+html{
+  font-size: $fz+px;
+}
+body{
+  font-size: 16px;
+  background-color: $color3;
+}
 /*GRID*/
 .container{
   /*width: 1640px;*/
-  width: 1200px;
+  width: 720px;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .row{
   display: flex;
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .row-vcentring{
   align-items: center;
@@ -22,6 +31,41 @@
   justify-content: center;
 }
 .col{
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+/*HEADER*/
+.header{
+  background-color: #fff;
+  @include ptr(padding, 10 0);
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+/*SECTIONS*/
+.main{
+  @include ptr(margin, 40 0 0 0);
+}
+
+.task{
+  position: relative;
+}
+.task-remove{
+  position: absolute;
+  top: 6px;
+  right: 50px;
+  z-index: 2;
+  transition: $linear-f;
+}
+.mat-expanded{
+  .mat-expansion-indicator{
+    margin: 4px 0 0 0;
+  }
+  & + .task-remove{
+    top: 14px;
+  }
+}
+.mat-expansion-indicator{
+  margin: -4px 0 0 0;
 }

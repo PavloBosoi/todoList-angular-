@@ -1,0 +1,33 @@
+<div class="task">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal data
+      </mat-panel-title>
+      <mat-panel-description>
+        Type your name and age
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form class="example-form">
+      <div class="row row-vcentring">
+        <div class="col">
+          <mat-form-field>
+            <input matInput placeholder="First name">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <button type="button" mat-button color="primary"><i class="material-icons">add_circle_outline</i></button>
+        </div>
+        <div class="col">
+          <button type="button" mat-button color="warn"><i class="material-icons">remove_circle_outline</i></button>
+        </div>
+      </div>
+    </form>
+  </mat-expansion-panel>
+
+  <div class="task-remove">
+    <button type="button" mat-button color="warn"><i class="material-icons">remove_circle_outline</i></button>
+  </div>
+</div>

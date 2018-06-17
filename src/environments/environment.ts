@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+    firebase: {
+        apiKey: "AIzaSyA_fgebJgXZ_dvWWjX7LH6Ma0c4UVewbMM",
+        authDomain: "creativetodo-pb25.firebaseapp.com",
+        databaseURL: "https://creativetodo-pb25.firebaseio.com",
+        projectId: "creativetodo-pb25",
+        storageBucket: "creativetodo-pb25.appspot.com",
+        messagingSenderId: "65522897407"
+    }
 };
 
 /*
