@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //vendor modules
 import { MaterialModule } from './vendors/material/material.module';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 //custom modules
 import { AddTaskModule } from './components-logical/add-task/add-task.module';
@@ -32,6 +32,7 @@ const APP_COMPONENTS = [
 const APP_MODULES = [
     AddTaskModule,
     TasksModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
 ];
 

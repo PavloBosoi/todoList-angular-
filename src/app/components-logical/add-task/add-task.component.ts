@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-add-task',
@@ -7,15 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddTaskComponent implements OnInit {
 
-    foods = [
-        {value: 'steak-0', viewValue: 'Steak'},
-        {value: 'pizza-1', viewValue: 'Pizza'},
-        {value: 'tacos-2', viewValue: 'Tacos'}
+    periods = [
+        {value: 'daily', viewValue: 'Daily'},
+        {value: 'weakly', viewValue: 'Weakly'},
+        {value: 'monthly', viewValue: 'Monthly'},
+        {value: 'yearly', viewValue: 'Yearly'}
     ];
+
+    addTaskForm: FormGroup;
 
   constructor() { }
 
   ngOnInit() {
+      this.addTaskForm = new FormGroup({
+          'task': new FormControl({value: '', disabled: false}, []),
+          'period': new FormControl({value: '', disabled: false}, [])
+      });
   }
+
+    submitForm(e) {
+        console.log(this.addTaskForm.get('period'), new Date());
+    }
 
 }

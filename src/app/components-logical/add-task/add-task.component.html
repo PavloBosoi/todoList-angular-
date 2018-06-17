@@ -1,19 +1,19 @@
 <div class="container">
-    <form class="example-form">
+    <form (submit)="submitForm($event)" class="example-form" [formGroup]="addTaskForm" novalidate>
       <div class="row row-vcentring row-gcentring">
 
         <div class="col">
           <mat-form-field class="example-full-width">
-            <input matInput #message maxlength="256" placeholder="Task">
+            <input matInput #message maxlength="256" placeholder="Task" formControlName="task">
             <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
           </mat-form-field>
         </div>
 
         <div class="col">
           <mat-form-field>
-            <mat-select placeholder="Favorite food">
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{ food.viewValue }}
+            <mat-select placeholder="Period" formControlName="period">
+              <mat-option *ngFor="let period of periods" [value]="period.value">
+                {{ period.viewValue }}
               </mat-option>
             </mat-select>
           </mat-form-field>
