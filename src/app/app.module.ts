@@ -22,8 +22,11 @@ import { AppRoutingModule } from './app.routing';
 //components
 import { HeaderComponent } from './components/header/header.component';
 
-
+//environment
 import { environment } from '../environments/environment';
+
+//services
+import { FirebaseService } from './shared/services/firebase/firebase.service';
 
 const APP_COMPONENTS = [
     HeaderComponent
@@ -49,7 +52,12 @@ const APP_MODULES = [
       MaterialModule,
       ...APP_MODULES
   ],
-  providers: [],
+    exports: [
+
+    ],
+  providers: [
+      FirebaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
