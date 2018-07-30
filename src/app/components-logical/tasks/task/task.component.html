@@ -27,7 +27,7 @@
     </form>
   </mat-expansion-panel>
 
-  <div class="task-remove">
+  <div class="task-remove" (click)="deleteTask(taskInput.key)">
     <button type="button" mat-button color="warn"><i class="material-icons">remove_circle_outline</i></button>
   </div>
 </div>

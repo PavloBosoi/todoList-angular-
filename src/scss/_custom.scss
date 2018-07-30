@@ -69,3 +69,6 @@ body{
 .mat-expansion-indicator{
   margin: -4px 0 0 0;
 }
+.mat-expansion-panel-header-title{
+  @include ptr(width, 200);
+}

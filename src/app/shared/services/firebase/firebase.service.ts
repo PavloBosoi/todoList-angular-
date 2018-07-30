@@ -12,23 +12,28 @@ export class FirebaseService {
     taskList: AngularFireList<any>;
 
     constructor(
-
         private firebaseSerice: AngularFireDatabase
-    ) { }
+    ) {
+        //get table list tasks
+        this.taskList = firebaseSerice.list('tasks');
+    }
 
     addTask(taskData) {
-        this.firebaseSerice.list('tasks').push(taskData);
+        this.taskList.push(taskData);
     }
 
     getTask() {
-        console.log(this.firebaseSerice.list('tasks').snapshotChanges());
-        return this.firebaseSerice.list('tasks').snapshotChanges().pipe(
+        return this.taskList.snapshotChanges().pipe(
             map((data) => {
                 return data.map((obj) => {
                     return {key: obj.payload.key, ...obj.payload.val()}
                 });
             }));
 
+    }
+
+    deleteTask(key: string) {
+        this.taskList.remove(key);
     }
 
 }
