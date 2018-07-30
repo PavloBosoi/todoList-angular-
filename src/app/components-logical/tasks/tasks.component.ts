@@ -23,7 +23,7 @@ export class TasksComponent implements OnInit {
 
   //get tasks from firebase
   getTasks() {
-      this.firebaseService.getTask()
+      this.firebaseService.getTasks()
           .subscribe((data) => {
               this.tasks = data;
           });

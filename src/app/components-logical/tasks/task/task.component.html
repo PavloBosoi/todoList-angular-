@@ -5,23 +5,23 @@
         {{ taskInput.task }}
       </mat-panel-title>
       <mat-panel-description>
-        {{ taskInput.time }}
+        {{ taskInput.time }} h - {{ taskInput.timeCurrent }}
       </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <form class="example-form">
+    <form class="example-form" [formGroup]="updateTaskForm" novalidate>
       <div class="row row-vcentring">
         <div class="col">
           <mat-form-field>
-            <input matInput placeholder="How much time you spend?">
+            <input matInput placeholder="How much time you spend?" formControlName="timeInput">
           </mat-form-field>
         </div>
 
         <div class="col">
-          <button type="button" mat-button color="primary"><i class="material-icons">add_circle_outline</i></button>
+          <button type="button" mat-button color="primary" (click)="updateTimeTask(taskInput.key, taskInput.timeCurrent, 'add')"><i class="material-icons">add_circle_outline</i></button>
         </div>
         <div class="col">
-          <button type="button" mat-button color="warn"><i class="material-icons">remove_circle_outline</i></button>
+          <button type="button" mat-button color="warn" (click)="updateTimeTask(taskInput.key, taskInput.timeCurrent, 'delete')"><i class="material-icons">remove_circle_outline</i></button>
         </div>
       </div>
     </form>

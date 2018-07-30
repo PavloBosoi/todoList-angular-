@@ -22,7 +22,7 @@ export class FirebaseService {
         this.taskList.push(taskData);
     }
 
-    getTask() {
+    getTasks() {
         return this.taskList.snapshotChanges().pipe(
             map((data) => {
                 return data.map((obj) => {
@@ -34,6 +34,11 @@ export class FirebaseService {
 
     deleteTask(key: string) {
         this.taskList.remove(key);
+    }
+
+    updateTimeTask(key: string, time: number) {
+        console.log(time);
+        this.taskList.update(key, { timeCurrent: time });
     }
 
 }

@@ -10,6 +10,12 @@
         </div>
 
         <div class="col">
+          <mat-form-field class="example-full-width">
+            <input matInput maxlength="5" placeholder="Time" formControlName="time">
+          </mat-form-field>
+        </div>
+
+        <div class="col">
           <mat-form-field>
             <mat-select placeholder="Period" formControlName="period">
               <mat-option *ngFor="let period of periods" [value]="period.value">

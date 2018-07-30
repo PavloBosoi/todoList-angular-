@@ -12,12 +12,12 @@ import { FirebaseService } from '../../shared/services/firebase/firebase.service
 export class AddTaskComponent implements OnInit {
 
     periods = [
-        {value: 'daily', viewValue: 'Daily'},
-        {value: 'weakly', viewValue: 'Weakly'},
-        {value: 'monthly', viewValue: 'Monthly'},
-        {value: 'yearly', viewValue: 'Yearly'}
+        {value: '24', viewValue: 'Day'},
+        {value: '168', viewValue: 'Weak'},
+        {value: '720', viewValue: 'Month'}
     ];
 
+    //form
     addTaskForm: FormGroup;
 
   constructor(
@@ -27,6 +27,7 @@ export class AddTaskComponent implements OnInit {
   ngOnInit() {
       this.addTaskForm = new FormGroup({
           'task': new FormControl({value: '', disabled: false}, []),
+          'time': new FormControl({value: '', disabled: false}, []),
           'period': new FormControl({value: '', disabled: false}, [])
       });
   }
@@ -39,8 +40,10 @@ export class AddTaskComponent implements OnInit {
 
       let taskData = {
           task: this.addTaskForm.get('task').value,
-          time: this.addTaskForm.get('period').value
-      }
+          time: parseInt(this.addTaskForm.get('time').value),
+          timeCurrent: 0,
+          period: this.addTaskForm.get('period').value
+      };
 
       this.firebaseService.addTask(taskData);
 
